@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>calender</title>
+  <link rel="stylesheet" type="text/css" href="./calender/customer.css">
+</head>
+<body>
+<cusDate class="cus-date"></cusDate>
+<script src="calender/calender.js"></script>
+<script>
+dateComponent.cusDate(cus_ele='.cus-date',cus_Params={OriginQuicky:[
+  {
+      label:'过去7天',
+      callback(picker) {
+          picker.$emit('cusSetQuickDate',[new Date(new Date().setHours(0,0,0,0)).getTime()-8*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000])
+      }
+  },
+  {
+      label:'过去14天',
+      callback(picker) {
+          picker.$emit('cusSetQuickDate',[new Date(new Date().setHours(0,0,0,0)).getTime()-15*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000])
+      }
+  },
+  {
+      label:'过去28天',
+      callback(picker) {
+          picker.$emit('cusSetQuickDate',[new Date(new Date().setHours(0,0,0,0)).getTime()-29*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000])
+      }
+  },
+  {
+      label:'过去30天',
+      callback(picker) {
+          picker.$emit('cusSetQuickDate',[new Date(new Date().setHours(0,0,0,0)).getTime()-31*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000])
+      }
+  },
+  {
+      label:'今天',
+      callback(picker) {
+          picker.$emit('cusSetQuickDate',[new Date().getTime(),new Date().getTime()]);
+      }
+  },
+  {
+      label:'昨天',
+      callback(picker) {
+          picker.$emit('cusSetQuickDate',[new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000])
+      }
+  }
+],divider:'~'});
+</script>
+</body>
+</html>
