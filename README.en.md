@@ -1,24 +1,45 @@
 cusDatePicker
-基于Vue的时间选择器插件
+Vue - based date picker plug-in
 
-# main.js
-import cusDatePicker from 'cusDatePicker'
-Vue.use(cusDatePicker)
-在项目中使用 cusDatePicker
+1.Install：
+
+
+2.Import
+global
+main.js
+```
+import compareDatePicker from 'compareDatePicker'
+Vue.use(compareDatePicker)
+```
+
+part
+```
+import compareDatePicker from 'compareDatePicker'
+components:{
+    compareDatePicker
+}
+```
+
+3.Use
 
 <template>
-  <cusDatePicker></cusDatePicker>
+  <cusDatePicker :originDate="" :compareDate=""></cusDatePicker>
 </template>
 
-1.快捷键
+1.Shortcuts
 
-默认包含今天，昨天，过去7天，过去14天，过去28天，过去30天，可以自定义选择快捷键
+The default includes today, yesterday, the past 7 days, the past 14 days, the past 28 days, and the past 30 days, and you can
+customize the shortcut.
+
+props | type |event |describe
+--|--|--|--|
+ OriginQuicky|Array|cusSetQuickDate|Custom shortcut, the default shortcut will be overwritten
+
 ```
-绑定的属性值：OriginQuicky   Array 快捷键事件为：cusSetQuickDate
-用法示例：
+example：
  [
     {
-        label:'过去7天',
+        label:'the past 7 days',
         callback(picker) {
             picker.$emit('cusSetQuickDate',[new Date(new Date().setHours(0,0,0,0)).getTime()-8*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000])
         }
@@ -26,26 +47,25 @@ Vue.use(cusDatePicker)
  ]
 ```
 
-1.自定义时间范围
+1.Customize date range
 
-根据点击日期的位置，智能判断选择时间范围（日期面板点击2次为一个周期，分别对应开始时间和结束时间，当结束时间小于开始时间的时候自动对掉）
-
-选择对比时间段
-
-```
-    绑定的属性值：is_compared:true/false
-    默认是false，不选择对比时间
-```
-
-需要选择进行对比，然后可以选择快捷键时间范围对比
-
-is_compared==true&&选择快捷键，默认对比时选择对比时间对比上一个时间段范围
-
-1.涉及到的参数
-cusCompareShow 是否显示对比日期相关
-is_compared  是否进行对比
-
-原始日期段参数：originDate，Array ，[开始时间，结束时间]
-对比日期段参数：CompareDate，Array ，[开始时间，结束时间]
+Select the date range according to the location of the click date
 
 
+2.Whether to display a comparison date
+
+props | type |default |describe
+ --|--|--|--|
+ cusCompareShow|boolean| true| Whether to display a comparable function
+ is_compared | boolean | false | Whether to open the comparison period
+
+You need to select for comparison, and then you can select the shortcut date range comparison
+
+is_compared==true&&shortcut，The default comparison time is selected to compare the range of the previous time period
+
+3.props
+
+props | type |default |describe
+ --|--|--|--|
+ originDate|Array| [new Date(new Date().setHours(0,0,0,0)).getTime() - 7*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()]| It means start time and end time of the comparison ,can be set
+ compareDate | Array | [] | It means start time and end time of the comparison ,cannot be set

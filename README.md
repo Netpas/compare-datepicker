@@ -26,8 +26,11 @@ components:{
 </template>
 1.快捷键
 
-默认包含今天，昨天，过去7天，过去14天，过去28天，过去30天，可以自定义选择快捷键，
-绑定的属性值：OriginQuicky   Array 快捷键事件为：cusSetQuickDate
+默认包含今天，昨天，过去7天，过去14天，过去28天，过去30天，可以自定义选择快捷键
+
+参数 | 类型 |事件 |描述
+--|--|--|--|
+ OriginQuicky|Array|cusSetQuickDate|自定义快捷键，默认的快捷键会被覆盖
 
 ```
 用法示例：
