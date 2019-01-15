@@ -3169,6 +3169,7 @@ function cusParseTime(time, cFormat) {
 
 
 
+
 function cusDrawCalender(year, month) {
   var num = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 72;
   var cusCalenderTitle = [],
@@ -3231,8 +3232,7 @@ function cusDisplayCalender(year, month) {
     var _obj = {
       type: "normal",
       classname: true,
-      cont: _i + 1,
-      format: year + '-' + month + '-' + (_i + 1)
+      cont: _i + 1
     };
 
     if (cusGetStamp(new Date()) < cusGetStamp(new Date(year + '-' + month + '-' + (_i + 1)))) {
@@ -3241,6 +3241,11 @@ function cusDisplayCalender(year, month) {
       _obj.notAllow = false;
     }
 
+    var tempDate = year + '-' + month + '-' + (_i + 1);
+    tempDate = tempDate.replace(/-/g, "/");
+    tempDate = new Date(tempDate);
+    tempDate = cusParseTime(tempDate, '{y}-{m}-{d}');
+    _obj.format = tempDate;
     calender_day.push(_obj);
   }
 

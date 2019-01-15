@@ -51,14 +51,17 @@ function cusDisplayCalender(year,month){
             type: "normal",
             classname:true,
             cont: i + 1,
-            format:year+'-'+month+'-'+(i+1),
         };
         if(cusGetStamp(new Date())<cusGetStamp(new Date(year+'-'+month+'-'+(i+1)))){
             obj.notAllow=true;
         }else{
             obj.notAllow=false;
         }
-
+        let tempDate = year+'-'+month+'-'+(i+1);
+        tempDate=tempDate.replace(/-/g, "/");
+        tempDate = new Date(tempDate);
+        tempDate = cusParseTime(tempDate, '{y}-{m}-{d}');
+        obj.format=tempDate;
         calender_day.push(obj);
     }
     if($last_day>0){

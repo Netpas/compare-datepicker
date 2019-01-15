@@ -5,6 +5,9 @@
 }
 html,body{
     height: 100%;
+    -ms-overflow-style:none;
+    overflow:-moz-scrollbars-none;
+    &::-webkit-scrollbar{width:0px}
 }
 
 .cus-calender-wrapper{
@@ -23,6 +26,7 @@ html,body{
         .cus-calender-panel{
             .cus-panel-origin-body,.cus-panel-compare-body{
                 margin: 0 10px;
+                display: inline-block;
             }
         }
         .cus-show-calender{
@@ -30,7 +34,6 @@ html,body{
                 width: 320px;
                 display: block;
             }
-
             .cus-compare-date{
                 padding: 0;
                 text-align: left;
@@ -64,6 +67,7 @@ html,body{
                 margin: 0;
                 border: none;
                 outline: none;
+                background: none;
                 text-align: center;
             }
         }
@@ -150,11 +154,13 @@ html,body{
             background: white;
             margin: 0 auto;
             padding: 20px 0;
-            display: inline-block;
             .cus-scroll-table{
                 height: 220px;
                 position: relative;
                 overflow-y: scroll;
+                overflow-x: hidden;
+                width: 110%;
+                scrollbar-width: none;
                 &::-webkit-scrollbar {
                     display: none;
                 }
