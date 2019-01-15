@@ -69,3 +69,9 @@ props | type |default |describe
  --|--|--|--|
  originDate|Array| [new Date(new Date().setHours(0,0,0,0)).getTime() - 7*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()]| It means start time and end time of the comparison ,can be set
  compareDate | Array | [] | It means start time and end time of the comparison ,cannot be set
+
+4.event
+
+event | type  |describe
+ --|--|--|--|
+change| function|Select the function to execute after the date is completed

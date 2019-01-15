@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <cus-date-picker :originDate="originDate"></cus-date-picker>
+    <compareDatePicker :originDate="originDate" @change="getDate()"></compareDatePicker>
   </div>
 </template>
 
@@ -10,6 +10,11 @@
       data(){
           return{
               originDate:[new Date(new Date().setHours(0,0,0,0)).getTime() - 7*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()],
+          }
+      },
+      methods:{
+          getDate(){
+              console.log(this.originDate)
           }
       }
   }

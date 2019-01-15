@@ -52,7 +52,7 @@
         </div>
         <div class="cus-panel-footer cus-clearFix" @click="cusQuickyShow=false;">
           <button v-if="cusCompareShow" @click="cusChangeCompare"><span v-if="!is_compare">对比其他时间</span><span v-else>取消对比</span></button>
-          <button @click="calender_show=false;">应用</button>
+          <button @click="cusApplyDate">应用</button>
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@
     import {cusGetStamp,cusParseTime} from '../utils/timeProcessing'
     import {cusCalender,cusDateQuicky} from './component/index'
     export default {
-        name: 'cus-date-picker',
+        name: 'compareDatePicker',
         components:{cusCalender,cusDateQuicky},
         mounted(){
             this.cusReloadCalender(cusParseTime(new Date(),'{y}'),cusParseTime(new Date(),'{m}'));
@@ -226,6 +226,10 @@
             }
         },
         methods:{
+            cusApplyDate(){
+                this.calender_show=false;
+                this.$emit('change');
+            },
             cusOriginSrcollTab(){
                 if(document.getElementById(this.cusOriginScrollTable).scrollTop<=10){
                     this.cusReloadCalender(cusParseTime(new Date(),'{y}'),cusParseTime(new Date(),'{m}'),true);
