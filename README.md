@@ -2,18 +2,18 @@ cusDatePicker
 基于Vue的时间选择器插件
 
 1.安装：
-
+npm install compare-date-picker@ --save
 
 2.引入
 全局引入main.js
 ```
-import compareDatePicker from 'compareDatePicker'
+import compareDatePicker from 'compare-date-picker'
 Vue.use(compareDatePicker)
 ```
 
 部分引入
 ```
-import compareDatePicker from 'compareDatePicker'
+import compareDatePicker from 'compare-date-picker'
 components:{
     compareDatePicker
 }

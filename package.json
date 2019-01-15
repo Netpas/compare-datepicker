@@ -1,7 +1,7 @@
 {
-  "name": "customer-date",
+  "name": "compare-date-picker",
   "version": "0.1.0",
-  "main": "./dist/cusDatePicker.umd.js",
+  "main": "./dist/compareDatePicker.umd.js",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",

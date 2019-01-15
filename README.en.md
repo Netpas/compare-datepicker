@@ -2,19 +2,19 @@ cusDatePicker
 Vue - based date picker plug-in
 
 1.Install：
-
+npm install compare-date-picker@ --save
 
 2.Import
 global
 main.js
 ```
-import compareDatePicker from 'compareDatePicker'
+import compareDatePicker from 'compare-date-picker'
 Vue.use(compareDatePicker)
 ```
 
 part
 ```
-import compareDatePicker from 'compareDatePicker'
+import compareDatePicker from 'compare-date-picker'
 components:{
     compareDatePicker
 }
