@@ -69,6 +69,8 @@ props | type |default |describe
  --|--|--|--|
  originDate|Array| [new Date(new Date().setHours(0,0,0,0)).getTime() - 7*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()]| It means start time and end time of the comparison ,can be set
  compareDate | Array | [] | It means start time and end time of the comparison ,cannot be set
+ divider | Stirng | / | The dividing line between a start date and an end date
+ weekName | Array | ["日","一","二","三","四","五","六"] |The first must be Sunday and can be changed to other week display
 
 4.event
 

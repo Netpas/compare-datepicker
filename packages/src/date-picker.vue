@@ -15,7 +15,7 @@
     </div>
     <div class="cus-panel-modal" :class="{is_calender_show:calender_show}" @click="calender_show=false">
     </div>
-    <div class="cus-calender-panel cus-clearFix" :class="{is_calender_show:calender_show}">
+    <div class="cus-calender-panel cus-clearFix" :class="{is_calender_show:calender_show,is_calender_show_right:is_calender_show_right}">
       <div class="cus-clearFix">
         <div class="cus-calender-panel-header">
           <h4 class="cus-clearFix">选择时间范围
@@ -71,13 +71,12 @@
         },
         data(){
             return{
-                weekName:["日","一","二","三","四","五","六"],
                 cusCalenderTitle:'',
                 cusDisplayCalender:[],
                 cusComCalenderTitle:'',
                 cusComDisplayCalender:[],
                 is_compare:false,
-                origin_Date:[cusParseTime(this.originDate[0]),cusParseTime(this.originDate[1])],
+                origin_Date:[cusParseTime(Number(this.originDate[0])),cusParseTime(Number(this.originDate[1]))],
                 is_origin_active:{},
                 is_compare_active:{},
                 is_start_active:{},
@@ -93,6 +92,7 @@
                 start_cycle:0,
                 calender_show:false,
                 cusQuickyShow:false,
+                is_calender_show_right:false,
                 CompareQuicky:[
                     {
                         label:'对比上一个时间段',
@@ -137,13 +137,14 @@
         watch:{
             originDate:{
                 handler: function(newer, older){
-                    this.origin_Date=[cusParseTime(newer[0]),cusParseTime(newer[1])]
+                    this.origin_Date=[cusParseTime(Number(newer[0])),cusParseTime(Number(newer[1]))];
+                    this.cusSelectedTime();
                 },
                 deep:true
             },
             compareDate:{
                 handler: function(newer, older){
-                    this.compare_Date=[cusParseTime(newer[0]),cusParseTime(newer[1])];
+                    this.compare_Date=[cusParseTime(Number(newer[0])),cusParseTime(Number(newer[1]))];
                 },
                 deep:true
             },
@@ -223,6 +224,12 @@
                 default:function(){
                     return [new Date(new Date().setHours(0,0,0,0)).getTime() - 7*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()]
                 }
+            },
+            weekName:{
+                type:Array,
+                default:function(){
+                    return ["日","一","二","三","四","五","六"]
+                }
             }
         },
         methods:{
@@ -258,7 +265,7 @@
                     }
                 }
                 if(cusGetStamp(new Date(this.origin_Date[num]))>cusGetStamp(new Date())){
-                    this.origin_Date[num]=cusParseTime(this.originDate[num],'{y}-{m}-{d}');
+                    this.origin_Date[num]=cusParseTime(Number(this.originDate[num]),'{y}-{m}-{d}');
                     return false;
                 }
                 this.setOriginDate(cusGetStamp(this.origin_Date[num]),num);
@@ -331,7 +338,7 @@
                         if($topid[i].split('-')[1]<10){
                             $topid[i]=$topid[i].split('-')[0]+'-0'+Number($topid[i].split('-')[1]);
                         }
-                        if(str+cusParseTime(date,'{y}-{m}')==$topid[i]){
+                        if(str+cusParseTime(Number(date),'{y}-{m}')==$topid[i]){
                             tempNum=i;
                             break;
                         }
@@ -342,7 +349,7 @@
                         let tempSpan=tempTable.getElementsByTagName('span');
                         let temp=0;
                         for(let i=0;i<tempSpan.length;i++){
-                            if(cusParseTime(date,'{y}-{m}-{d}')==tempSpan[i].getAttribute('date-formate')){
+                            if(cusParseTime(Number(date),'{y}-{m}-{d}')==tempSpan[i].getAttribute('date-formate')){
                                 temp=i;
                                 break
                             }
@@ -354,6 +361,14 @@
             cusChangeCompare(){
                 this.is_compare=!this.is_compare;
                 if(this.is_compare){
+                    if(document.getElementsByClassName('cus-calender-wrapper')){
+                        let tempdiv=document.getElementsByClassName('cus-calender-wrapper')[0];
+                        let bodyWidth=document.documentElement.clientWidth||document.body.offsetWidth;
+                        let divWidth=tempdiv.offsetWidth;
+                        if(bodyWidth-tempdiv.offsetLeft-divWidth<220){
+                            this.is_calender_show_right=true;
+                        }
+                    }
                     this.cusGetSelectDate(this.cusChooseCompareData);
                 }else{
                     this.cusSelectedTime();

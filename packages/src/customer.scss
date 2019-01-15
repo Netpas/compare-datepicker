@@ -13,17 +13,18 @@ html,body{
 .cus-calender-wrapper{
     position: relative;
     width: 320px;
+    display: inline-block;
     hr{
         width: 320px;
         margin-left: -38px;
     }
     &.is_compare_show{
-        width: 535px;
         hr{
             width: 265px;
             margin-left: -10px;
         }
         .cus-calender-panel{
+            width: 535px;
             .cus-panel-origin-body,.cus-panel-compare-body{
                 margin: 0 10px;
                 display: inline-block;
@@ -62,6 +63,7 @@ html,body{
             box-shadow: 0 0 10px 0 #ddd;
             position: relative;
             z-index: 10;
+            text-align: center;
             input{
                 width: 44%;
                 margin: 0;
@@ -83,6 +85,9 @@ html,body{
         display: none;
         &.is_calender_show{
             display: block;
+        }
+        &.is_calender_show_right{
+            right: 0;
         }
         .cus-calender-panel-header{
             width: 100%;
