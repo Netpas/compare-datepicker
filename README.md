@@ -8,12 +8,14 @@ npm install compare-date-picker@ --save
 全局引入main.js
 ```
 import compareDatePicker from 'compare-date-picker'
+import 'compare-date-picker/dist/compareDatePicker.css'
 Vue.use(compareDatePicker)
 ```
 
 部分引入
 ```
 import compareDatePicker from 'compare-date-picker'
+import 'compare-date-picker/dist/compareDatePicker.css'
 components:{
     compareDatePicker
 }
@@ -64,7 +66,7 @@ is_compared==true&&选择快捷键，默认对比时选择对比时间对比上�
 
 参数 | 类型 |默认值 |描述
  --|--|--|--|
- originDate|Array| [new Date(new Date().setHours(0,0,0,0)).getTime() - 7*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()]| 原始开始时间和结束时间，可设置，时间戳以0点为届
+ originDate|Array| [new Date(new Date().setHours(0,0,0,0)).getTime() - 7*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()]| 原始开始时间和结束时间，可设置
  compareDate | Array | [] | 对比的开始时间和结束时间，不可设置
  divider | Stirng | / | 开始日期和结束日期分界线
  weekName | Array | ["日","一","二","三","四","五","六"] |第一位必须是周日，可以修改为其他星期显示形式

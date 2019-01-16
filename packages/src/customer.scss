@@ -55,6 +55,11 @@ html,body{
         }
     }
     .cus-show-calender{
+        .cus-origin-date,.cus-compare-date{
+            i{
+                font-style: normal;
+            }
+        }
         .cus-origin-date{
             padding: 10px 0;
             border: 1px solid #ddd;
@@ -63,6 +68,7 @@ html,body{
             box-shadow: 0 0 10px 0 #ddd;
             position: relative;
             z-index: 10;
+            background: white;
             text-align: center;
             input{
                 width: 44%;
@@ -165,6 +171,7 @@ html,body{
                 overflow-y: scroll;
                 overflow-x: hidden;
                 width: 110%;
+                text-align: center;
                 scrollbar-width: none;
                 &::-webkit-scrollbar {
                     display: none;
@@ -172,6 +179,7 @@ html,body{
             }
             .cus-table-location{
                 height: auto;
+                text-align: center;
             }
             .cus-calender-table{
                 border-collapse: collapse;

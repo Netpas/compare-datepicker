@@ -157,6 +157,14 @@
             },
             calender_show(m){
                 if(m){
+                    if(document.getElementsByClassName('cus-calender-wrapper')){
+                        let tempdiv=document.getElementsByClassName('cus-calender-wrapper')[0];
+                        let bodyWidth=document.documentElement.clientWidth||document.body.offsetWidth;
+                        let divWidth=tempdiv.offsetWidth;
+                        if(bodyWidth-tempdiv.offsetLeft-divWidth<220){
+                            this.is_calender_show_right=true;
+                        }
+                    }
                     this.cusPageScroll('origin',this.originDate[1],this.cusOriginCalenderID,this.cusOriginScrollTable)
                 }
             },
@@ -302,13 +310,13 @@
                     let tempCalender=this.cusDisplayCalender[i];
                     for(let j=0;j<tempCalender.length;j++){
                         let tempDate = cusGetStamp(tempCalender[j].format);
-                        if (tempDate == this.originDate[0]) {
+                        if (cusParseTime(tempDate) == cusParseTime(this.originDate[0])) {
                             this.is_start_active[tempCalender[j].format] = true;
                         }
-                        if (tempDate == this.originDate[1]) {
+                        if (cusParseTime(tempDate) == cusParseTime(this.originDate[1])) {
                             this.is_end_active[tempCalender[j].format] = true;
                         }
-                        if (tempDate >= this.originDate[0] && tempDate <= this.originDate[1] && tempCalender[j].type == 'normal') {
+                        if (cusParseTime(tempDate) >= cusParseTime(this.originDate[0]) && cusParseTime(tempDate) <= cusParseTime(this.originDate[1]) && tempCalender[j].type == 'normal') {
                             this.is_origin_active[tempCalender[j].format] = true;
                         }
                     }
@@ -318,13 +326,13 @@
                         let tempCalender=this.cusComDisplayCalender[i];
                         for(let j=0;j<tempCalender.length;j++){
                             let tempDate = cusGetStamp(tempCalender[j].format);
-                            if (tempDate == this.compareDate[0]) {
+                            if (cusParseTime(tempDate) == cusParseTime(this.compareDate[0])) {
                                 this.is_com_start_active[tempCalender[j].format] = true;
                             }
-                            if (tempDate == this.compareDate[1]) {
+                            if (cusParseTime(tempDate) == cusParseTime(this.compareDate[1])) {
                                 this.is_com_end_active[tempCalender[j].format] = true;
                             }
-                            if (tempDate >= this.compareDate[0] && tempDate <= this.compareDate[1] && tempCalender[j].type == 'normal') {
+                            if (cusParseTime(tempDate) >= cusParseTime(this.compareDate[0]) && cusParseTime(tempDate <= this.compareDate[1]) && tempCalender[j].type == 'normal') {
                                 this.is_compare_active[tempCalender[j].format] = true;
                             }
                         }
@@ -361,14 +369,6 @@
             cusChangeCompare(){
                 this.is_compare=!this.is_compare;
                 if(this.is_compare){
-                    if(document.getElementsByClassName('cus-calender-wrapper')){
-                        let tempdiv=document.getElementsByClassName('cus-calender-wrapper')[0];
-                        let bodyWidth=document.documentElement.clientWidth||document.body.offsetWidth;
-                        let divWidth=tempdiv.offsetWidth;
-                        if(bodyWidth-tempdiv.offsetLeft-divWidth<220){
-                            this.is_calender_show_right=true;
-                        }
-                    }
                     this.cusGetSelectDate(this.cusChooseCompareData);
                 }else{
                     this.cusSelectedTime();
@@ -433,7 +433,6 @@
                         this.cusPageScroll('origin',this.originDate[0],this.cusOriginCalenderID,this.cusOriginScrollTable)
                     }
                 }
-                this.cusSelectedTime();
             },
             setCompareDate(){
                 let tempdate=arguments[0];

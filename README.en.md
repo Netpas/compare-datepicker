@@ -9,12 +9,14 @@ global
 main.js
 ```
 import compareDatePicker from 'compare-date-picker'
+import 'compare-date-picker/dist/compareDatePicker.css'
 Vue.use(compareDatePicker)
 ```
 
 part
 ```
 import compareDatePicker from 'compare-date-picker'
+import 'compare-date-picker/dist/compareDatePicker.css'
 components:{
     compareDatePicker
 }
