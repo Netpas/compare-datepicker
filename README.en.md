@@ -1,4 +1,4 @@
-cusDatePicker
+DatePicker
 Vue - based date picker plug-in
 
 1.Install：
@@ -59,11 +59,8 @@ Select the date range according to the location of the click date
 props | type |default |describe
  --|--|--|--|
  cusCompareShow|boolean| true| Whether to display a comparable function
- is_compared | boolean | false | Whether to open the comparison period
 
 You need to select for comparison, and then you can select the shortcut date range comparison
-
-is_compared==true&&shortcut，The default comparison time is selected to compare the range of the previous time period
 
 3.props
 

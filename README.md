@@ -1,4 +1,4 @@
-cusDatePicker
+DatePicker
 基于Vue的时间选择器插件
 
 1.安装：
@@ -56,11 +56,8 @@ components:{
 参数 | 类型 |默认值 |描述
  --|--|--|--|
  cusCompareShow|boolean| true| 是否显示可对比功能
- is_compared | boolean | false | 是否打开对比时间段
 
 需要选择进行对比，然后可以选择快捷键时间范围对比
-
-is_compared==true&&选择快捷键，默认对比时选择对比时间对比上一个时间段范围
 
 3.涉及到的参数
 

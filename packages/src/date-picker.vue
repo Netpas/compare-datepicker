@@ -161,7 +161,7 @@
                         let tempdiv=document.getElementsByClassName('cus-calender-wrapper')[0];
                         let bodyWidth=document.documentElement.clientWidth||document.body.offsetWidth;
                         let divWidth=tempdiv.offsetWidth;
-                        if(bodyWidth-tempdiv.offsetLeft-divWidth<220){
+                        if(bodyWidth-tempdiv.offsetLeft-divWidth<300){
                             this.is_calender_show_right=true;
                         }
                     }
@@ -310,13 +310,13 @@
                     let tempCalender=this.cusDisplayCalender[i];
                     for(let j=0;j<tempCalender.length;j++){
                         let tempDate = cusGetStamp(tempCalender[j].format);
-                        if (cusParseTime(tempDate) == cusParseTime(this.originDate[0])) {
+                        if (cusParseTime(Number(tempDate),'{y}{m}{d}') == cusParseTime(Number(this.originDate[0]),'{y}{m}{d}')) {
                             this.is_start_active[tempCalender[j].format] = true;
                         }
-                        if (cusParseTime(tempDate) == cusParseTime(this.originDate[1])) {
+                        if (cusParseTime(Number(tempDate),'{y}{m}{d}') == cusParseTime(Number(this.originDate[1]),'{y}{m}{d}')) {
                             this.is_end_active[tempCalender[j].format] = true;
                         }
-                        if (cusParseTime(tempDate) >= cusParseTime(this.originDate[0]) && cusParseTime(tempDate) <= cusParseTime(this.originDate[1]) && tempCalender[j].type == 'normal') {
+                        if (cusParseTime(Number(tempDate),'{y}{m}{d}') >= cusParseTime(Number(this.originDate[0]),'{y}{m}{d}') && cusParseTime(Number(tempDate),'{y}{m}{d}') <= cusParseTime(Number(this.originDate[1]),'{y}{m}{d}') && tempCalender[j].type == 'normal') {
                             this.is_origin_active[tempCalender[j].format] = true;
                         }
                     }
@@ -326,13 +326,13 @@
                         let tempCalender=this.cusComDisplayCalender[i];
                         for(let j=0;j<tempCalender.length;j++){
                             let tempDate = cusGetStamp(tempCalender[j].format);
-                            if (cusParseTime(tempDate) == cusParseTime(this.compareDate[0])) {
+                            if (cusParseTime(Number(tempDate),'{y}{m}{d}') == cusParseTime(Number(this.compareDate[0]),'{y}{m}{d}')) {
                                 this.is_com_start_active[tempCalender[j].format] = true;
                             }
-                            if (cusParseTime(tempDate) == cusParseTime(this.compareDate[1])) {
+                            if (cusParseTime(Number(tempDate),'{y}{m}{d}') == cusParseTime(Number(this.compareDate[1]),'{y}{m}{d}')) {
                                 this.is_com_end_active[tempCalender[j].format] = true;
                             }
-                            if (cusParseTime(tempDate) >= cusParseTime(this.compareDate[0]) && cusParseTime(tempDate <= this.compareDate[1]) && tempCalender[j].type == 'normal') {
+                            if (cusParseTime(Number(tempDate),'{y}{m}{d}') >= cusParseTime(Number(this.compareDate[0]),'{y}{m}{d}') && (cusParseTime(Number(tempDate),'{y}{m}{d}') <= cusParseTime(Number(this.compareDate[1]),'{y}{m}{d}')) && tempCalender[j].type == 'normal') {
                                 this.is_compare_active[tempCalender[j].format] = true;
                             }
                         }
@@ -406,7 +406,7 @@
                 if(arguments.length>=2){
                     let num=arguments[1],tempdate=arguments[0];
                     if(num==1&&cusGetStamp(tempdate)==this.originDate[0]){
-                        this.originDate[1]=cusGetStamp(tempdate);
+                        this.originDate.splice(1,1,cusGetStamp(tempdate));
                     }else {
                         this.originDate.splice(num,1,cusGetStamp(tempdate));
                     }
