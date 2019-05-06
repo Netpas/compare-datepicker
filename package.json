@@ -1,9 +1,15 @@
 {
   "name": "compare-date-picker",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "./dist/compareDatePicker.umd.js",
   "license": "MIT",
-  "keywords": ["date","datepicker","vue","js","compare-date"],
+  "keywords": [
+    "date",
+    "datepicker",
+    "vue",
+    "js",
+    "compare-date"
+  ],
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -21,11 +27,11 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-plugin-eslint": "^3.0.5",
-    "@vue/cli-service": "^3.0.5",
+    "@vue/cli-service": "^3.7.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.17"
   },
