@@ -307,13 +307,13 @@ html,body{
         padding: 5px 15px;
         margin: 0 5px;
         outline: none;
-        &:nth-child(1){
+        &.cancel{
             background: none;
             border: none;
             color: rgb(23,99,231);
             cursor: pointer;
         }
-        &:nth-child(2){
+        &.primary{
             background: rgb(23,99,231);
             border: none;
             border-radius: 5px;

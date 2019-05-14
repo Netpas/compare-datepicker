@@ -51,8 +51,9 @@
                   @cusSrcollTab="cusCompareSrcollTab"></cusCalender>
         </div>
         <div class="cus-panel-footer cus-clearFix" @click="cusQuickyShow=false;">
-          <button v-if="cusCompareShow" @click="cusChangeCompare"><span v-if="!is_compare">对比其他时间</span><span v-else>取消对比</span></button>
-          <button @click="cusApplyDate">应用</button>
+          <button v-if="cusCompareShow" class="primary" @click="cusChangeCompare"><span v-if="!is_compare">对比其他时间</span><span v-else>取消对比</span></button>
+          <button @click="cusApplyDate" class="primary">应用</button>
+          <button @click="calender_show=false;" class="cancel">取消</button>
         </div>
       </div>
     </div>
