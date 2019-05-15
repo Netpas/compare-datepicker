@@ -22,6 +22,8 @@
     "url": "https://github.com/Netpas/compare-datepicker.git"
   },
   "dependencies": {
+    "node-gyp": "^4.0.0",
+    "tar": "^4.4.8",
     "vue": "^2.5.17"
   },
   "devDependencies": {
