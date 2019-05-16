@@ -19,7 +19,7 @@
       <div class="cus-clearFix">
         <div class="cus-calender-panel-header">
           <h4 class="cus-clearFix">选择时间范围
-            <span @click="cusQuickyShow=!cusQuickyShow;">自定义
+            <span @click="cusQuickyShow=!cusQuickyShow;">{{showTitle}}
               <i @click.native="cusQuickyShow=!cusQuickyShow;" :class="{'cus-triangle-top':cusQuickyShow,'cus-triangle-bottom':!cusQuickyShow}"></i>
             </span>
           </h4>
@@ -91,6 +91,7 @@
                 compare_Date:this.compareDate,
                 cusChooseCompareData:'last_time_period',
                 start_cycle:0,
+                showTitle:'自定义',
                 calender_show:false,
                 cusQuickyShow:false,
                 is_calender_show_right:false,
@@ -182,40 +183,47 @@
             OriginQuicky:{
                 type:Array,
                 default:function(){
+                    let _this=this;
                     return [
                         {
                             label:'过去7天',
                             callback(picker) {
-                                picker.$emit('cusSetQuickDate',[new Date(new Date().setHours(0,0,0,0)).getTime()-8*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000])
+                                _this.showTitle="过去7天";
+                                picker.$emit('cusSetQuickDate',[new Date(new Date().setHours(0,0,0,0)).getTime()-7*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000])
                             }
                         },
                         {
                             label:'过去14天',
                             callback(picker) {
-                                picker.$emit('cusSetQuickDate',[new Date(new Date().setHours(0,0,0,0)).getTime()-15*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000])
+                                _this.showTitle="过去14天";
+                                picker.$emit('cusSetQuickDate',[new Date(new Date().setHours(0,0,0,0)).getTime()-14*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000])
                             }
                         },
                         {
                             label:'过去28天',
                             callback(picker) {
-                                picker.$emit('cusSetQuickDate',[new Date(new Date().setHours(0,0,0,0)).getTime()-29*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000])
+                                _this.showTitle="过去28天";
+                                picker.$emit('cusSetQuickDate',[new Date(new Date().setHours(0,0,0,0)).getTime()-28*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000])
                             }
                         },
                         {
                             label:'过去30天',
                             callback(picker) {
-                                picker.$emit('cusSetQuickDate',[new Date(new Date().setHours(0,0,0,0)).getTime()-31*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000])
+                                _this.showTitle="过去28天";
+                                picker.$emit('cusSetQuickDate',[new Date(new Date().setHours(0,0,0,0)).getTime()-30*24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000])
                             }
                         },
                         {
                             label:'今天',
                             callback(picker) {
+                                _this.showTitle="今天";
                                 picker.$emit('cusSetQuickDate',[new Date().getTime(),new Date().getTime()]);
                             }
                         },
                         {
                             label:'昨天',
                             callback(picker) {
+                                _this.showTitle="昨天";
                                 picker.$emit('cusSetQuickDate',[new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000,new Date(new Date().setHours(0,0,0,0)).getTime()-24*60*60*1000])
                             }
                         }

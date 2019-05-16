@@ -1,6 +1,6 @@
 {
   "name": "compare-date-picker",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "main": "./dist/compareDatePicker.umd.js",
   "license": "MIT",
   "keywords": [

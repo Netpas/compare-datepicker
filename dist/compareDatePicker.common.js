@@ -3117,12 +3117,12 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"d258d09c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/src/date-picker.vue?vue&type=template&id=6c9bc37c&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"cus-calender-wrapper",class:{is_compare_show:_vm.is_compare}},[_c('div',{staticClass:"cus-show-calender"},[_c('div',{staticClass:"cus-origin-date",on:{"click":function($event){_vm.calender_show=true}}},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.origin_Date[0]),expression:"origin_Date[0]"}],ref:"origin_start_Date",attrs:{"type":"text","id":"cusOriginStartDate","autocomplete":"off"},domProps:{"value":(_vm.origin_Date[0])},on:{"keyup":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }_vm.cusChooseDate(0)},"focus":function($event){_vm.getFocus(0)},"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.origin_Date, 0, $event.target.value)}}}),_c('i',[_vm._v(_vm._s(_vm.divider))]),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.origin_Date[1]),expression:"origin_Date[1]"}],ref:"origin_end_Date",attrs:{"type":"text","id":"cusOriginEndDate","autocomplete":"off"},domProps:{"value":(_vm.origin_Date[1])},on:{"keyup":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }_vm.cusChooseDate(1)},"focus":function($event){_vm.getFocus(1)},"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.origin_Date, 1, $event.target.value)}}})]),(_vm.is_compare)?_c('div',{staticClass:"cus-compare-date",on:{"click":function($event){_vm.calender_show=true}}},[(_vm.is_compare)?_c('span',[_vm._v("对比")]):_vm._e(),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.compare_Date[0]),expression:"compare_Date[0]"}],ref:"compare_start_Date",attrs:{"type":"text","id":"cusCompareStartDate","readonly":""},domProps:{"value":(_vm.compare_Date[0])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.compare_Date, 0, $event.target.value)}}}),_c('i',[_vm._v(_vm._s(_vm.divider))]),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.compare_Date[1]),expression:"compare_Date[1]"}],ref:"compare_end_Date",attrs:{"type":"text","id":"cusCompareEndDate","readonly":""},domProps:{"value":(_vm.compare_Date[1])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.compare_Date, 1, $event.target.value)}}})]):_vm._e()]),_c('div',{staticClass:"cus-panel-modal",class:{is_calender_show:_vm.calender_show},on:{"click":function($event){_vm.calender_show=false}}}),_c('div',{staticClass:"cus-calender-panel cus-clearFix",class:{is_calender_show:_vm.calender_show,is_calender_show_right:_vm.is_calender_show_right}},[_c('div',{staticClass:"cus-clearFix"},[_c('div',{staticClass:"cus-calender-panel-header"},[_c('h4',{staticClass:"cus-clearFix"},[_vm._v("选择时间范围\n          "),_c('span',{on:{"click":function($event){_vm.cusQuickyShow=!_vm.cusQuickyShow;}}},[_vm._v("自定义\n            "),_c('i',{class:{'cus-triangle-top':_vm.cusQuickyShow,'cus-triangle-bottom':!_vm.cusQuickyShow},nativeOn:{"click":function($event){_vm.cusQuickyShow=!_vm.cusQuickyShow;}}})])]),_c('cusDateQuicky',{attrs:{"cusQuickyShow":_vm.cusQuickyShow,"OriginQuicky":_vm.OriginQuicky,"is_compare":_vm.is_compare,"CompareQuicky":_vm.CompareQuicky},on:{"cusSetQuickDate":_vm.cusSetQuickDate,"cusGetSelectDate":_vm.cusGetSelectDate}})],1),_c('div',{staticClass:"cus-panel-origin-body cus-clearFix",on:{"click":function($event){_vm.cusQuickyShow=false;}}},[_c('cusCalender',{attrs:{"weekName":_vm.weekName,"cusTitle":_vm.cusCalenderTitle,"cusCalender":_vm.cusDisplayCalender,"is_active":_vm.is_origin_active,"is_start_active":_vm.is_start_active,"is_end_active":_vm.is_end_active,"cusScrollTable":_vm.cusOriginScrollTable,"cusCalenderID":_vm.cusOriginCalenderID},on:{"cusSrcollTab":_vm.cusOriginSrcollTab,"cusClickTime":_vm.cusClickOriginTime}})],1),(_vm.is_compare)?_c('div',{staticClass:"cus-panel-compare-body cus-clearFix",on:{"click":function($event){_vm.cusQuickyShow=false;}}},[_c('cusCalender',{attrs:{"weekName":_vm.weekName,"cusTitle":_vm.cusComCalenderTitle,"cusCalender":_vm.cusComDisplayCalender,"is_active":_vm.is_compare_active,"is_start_active":_vm.is_com_start_active,"is_end_active":_vm.is_com_end_active,"cusScrollTable":_vm.cusCompareScrollTable,"cusCalenderID":_vm.cusCompareCalenderID},on:{"cusSrcollTab":_vm.cusCompareSrcollTab}})],1):_vm._e(),_c('div',{staticClass:"cus-panel-footer cus-clearFix",on:{"click":function($event){_vm.cusQuickyShow=false;}}},[(_vm.cusCompareShow)?_c('button',{staticClass:"primary",on:{"click":_vm.cusChangeCompare}},[(!_vm.is_compare)?_c('span',[_vm._v("对比其他时间")]):_c('span',[_vm._v("取消对比")])]):_vm._e(),_c('button',{staticClass:"primary",on:{"click":_vm.cusApplyDate}},[_vm._v("应用")]),_c('button',{staticClass:"cancel",on:{"click":function($event){_vm.calender_show=false;}}},[_vm._v("取消")])])])])])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5c1b9096-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/src/date-picker.vue?vue&type=template&id=283ca082&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"cus-calender-wrapper",class:{is_compare_show:_vm.is_compare}},[_c('div',{staticClass:"cus-show-calender"},[_c('div',{staticClass:"cus-origin-date",on:{"click":function($event){_vm.calender_show=true}}},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.origin_Date[0]),expression:"origin_Date[0]"}],ref:"origin_start_Date",attrs:{"type":"text","id":"cusOriginStartDate","autocomplete":"off"},domProps:{"value":(_vm.origin_Date[0])},on:{"keyup":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }_vm.cusChooseDate(0)},"focus":function($event){_vm.getFocus(0)},"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.origin_Date, 0, $event.target.value)}}}),_c('i',[_vm._v(_vm._s(_vm.divider))]),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.origin_Date[1]),expression:"origin_Date[1]"}],ref:"origin_end_Date",attrs:{"type":"text","id":"cusOriginEndDate","autocomplete":"off"},domProps:{"value":(_vm.origin_Date[1])},on:{"keyup":function($event){if(!('button' in $event)&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }_vm.cusChooseDate(1)},"focus":function($event){_vm.getFocus(1)},"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.origin_Date, 1, $event.target.value)}}})]),(_vm.is_compare)?_c('div',{staticClass:"cus-compare-date",on:{"click":function($event){_vm.calender_show=true}}},[(_vm.is_compare)?_c('span',[_vm._v("对比")]):_vm._e(),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.compare_Date[0]),expression:"compare_Date[0]"}],ref:"compare_start_Date",attrs:{"type":"text","id":"cusCompareStartDate","readonly":""},domProps:{"value":(_vm.compare_Date[0])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.compare_Date, 0, $event.target.value)}}}),_c('i',[_vm._v(_vm._s(_vm.divider))]),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.compare_Date[1]),expression:"compare_Date[1]"}],ref:"compare_end_Date",attrs:{"type":"text","id":"cusCompareEndDate","readonly":""},domProps:{"value":(_vm.compare_Date[1])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.compare_Date, 1, $event.target.value)}}})]):_vm._e()]),_c('div',{staticClass:"cus-panel-modal",class:{is_calender_show:_vm.calender_show},on:{"click":function($event){_vm.calender_show=false}}}),_c('div',{staticClass:"cus-calender-panel cus-clearFix",class:{is_calender_show:_vm.calender_show,is_calender_show_right:_vm.is_calender_show_right}},[_c('div',{staticClass:"cus-clearFix"},[_c('div',{staticClass:"cus-calender-panel-header"},[_c('h4',{staticClass:"cus-clearFix"},[_vm._v("选择时间范围\n          "),_c('span',{on:{"click":function($event){_vm.cusQuickyShow=!_vm.cusQuickyShow;}}},[_vm._v(_vm._s(_vm.showTitle)+"\n            "),_c('i',{class:{'cus-triangle-top':_vm.cusQuickyShow,'cus-triangle-bottom':!_vm.cusQuickyShow},nativeOn:{"click":function($event){_vm.cusQuickyShow=!_vm.cusQuickyShow;}}})])]),_c('cusDateQuicky',{attrs:{"cusQuickyShow":_vm.cusQuickyShow,"OriginQuicky":_vm.OriginQuicky,"is_compare":_vm.is_compare,"CompareQuicky":_vm.CompareQuicky},on:{"cusSetQuickDate":_vm.cusSetQuickDate,"cusGetSelectDate":_vm.cusGetSelectDate}})],1),_c('div',{staticClass:"cus-panel-origin-body cus-clearFix",on:{"click":function($event){_vm.cusQuickyShow=false;}}},[_c('cusCalender',{attrs:{"weekName":_vm.weekName,"cusTitle":_vm.cusCalenderTitle,"cusCalender":_vm.cusDisplayCalender,"is_active":_vm.is_origin_active,"is_start_active":_vm.is_start_active,"is_end_active":_vm.is_end_active,"cusScrollTable":_vm.cusOriginScrollTable,"cusCalenderID":_vm.cusOriginCalenderID},on:{"cusSrcollTab":_vm.cusOriginSrcollTab,"cusClickTime":_vm.cusClickOriginTime}})],1),(_vm.is_compare)?_c('div',{staticClass:"cus-panel-compare-body cus-clearFix",on:{"click":function($event){_vm.cusQuickyShow=false;}}},[_c('cusCalender',{attrs:{"weekName":_vm.weekName,"cusTitle":_vm.cusComCalenderTitle,"cusCalender":_vm.cusComDisplayCalender,"is_active":_vm.is_compare_active,"is_start_active":_vm.is_com_start_active,"is_end_active":_vm.is_com_end_active,"cusScrollTable":_vm.cusCompareScrollTable,"cusCalenderID":_vm.cusCompareCalenderID},on:{"cusSrcollTab":_vm.cusCompareSrcollTab}})],1):_vm._e(),_c('div',{staticClass:"cus-panel-footer cus-clearFix",on:{"click":function($event){_vm.cusQuickyShow=false;}}},[(_vm.cusCompareShow)?_c('button',{staticClass:"primary",on:{"click":_vm.cusChangeCompare}},[(!_vm.is_compare)?_c('span',[_vm._v("对比其他时间")]):_c('span',[_vm._v("取消对比")])]):_vm._e(),_c('button',{staticClass:"primary",on:{"click":_vm.cusApplyDate}},[_vm._v("应用")]),_c('button',{staticClass:"cancel",on:{"click":function($event){_vm.calender_show=false;}}},[_vm._v("取消")])])])])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./packages/src/date-picker.vue?vue&type=template&id=6c9bc37c&
+// CONCATENATED MODULE: ./packages/src/date-picker.vue?vue&type=template&id=283ca082&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/parse-int.js
 var parse_int = __webpack_require__("e814");
@@ -3326,7 +3326,7 @@ function cusDisplayCalender(year, month) {
 }
 
 ;
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"d258d09c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/src/component/calender.vue?vue&type=template&id=f3da7a2c&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5c1b9096-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/src/component/calender.vue?vue&type=template&id=f3da7a2c&scoped=true&
 var calendervue_type_template_id_f3da7a2c_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{staticClass:"cus-panel-container-header cus-clearFix"},_vm._l((_vm.weekName),function(value){return _c('span',{key:value,staticClass:"cus-calender-header"},[_vm._v("\n        "+_vm._s(value)+"\n      ")])}),0),_c('hr'),_c('div',{staticClass:"cus-scroll-table cus-clearFix",attrs:{"id":_vm.cusScrollTable},on:{"scroll":_vm.cusSrcollTab}},[_c('div',{staticClass:"cus-table-location"},_vm._l((_vm.cusCalender),function(vals,k){return _c('table',{key:k,staticClass:"cus-calender-table",attrs:{"id":_vm.cusCalenderID[k]}},[_c('caption',{staticClass:"cus-calender-title"},[_vm._v(_vm._s(_vm.cusTitle[k]))]),_vm._l(([0,1,2,3,4,5,6]),function(key){return _c('tr',_vm._l((vals),function(item,index){return (7*key<=index&&index<7*(key+1))?_c('td',{key:index},[_c('span',{key:index,staticClass:"cus-calender-body",class:{normal:item.classname,
                 'cus-not-click-true':item.notAllow,
                 'cus-calender_including':_vm.is_active[item.format],
@@ -3510,7 +3510,7 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var calender = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"d258d09c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/src/component/date-quicky.vue?vue&type=template&id=145aecfa&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5c1b9096-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/src/component/date-quicky.vue?vue&type=template&id=145aecfa&scoped=true&
 var date_quickyvue_type_template_id_145aecfa_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"cus-quicky-key cus-clearFix",class:{'cus-quicky-key-show':_vm.cusQuickyShow}},[_c('ul',_vm._l((_vm.OriginQuicky),function(item,index){return _c('li',{key:index,on:{"click":function($event){_vm.handleRangePick(item)}}},[_vm._v(_vm._s(item.label))])}),0),(_vm.is_compare)?_c('ul',_vm._l((_vm.CompareQuicky),function(item,index){return _c('li',{key:index,on:{"click":function($event){_vm.handleComparePick(item)}}},[_vm._v(_vm._s(item.label))])}),0):_vm._e()])}
 var date_quickyvue_type_template_id_145aecfa_scoped_true_staticRenderFns = []
 
@@ -3669,6 +3669,7 @@ var date_quicky_component = normalizeComponent(
       compare_Date: this.compareDate,
       cusChooseCompareData: 'last_time_period',
       start_cycle: 0,
+      showTitle: '自定义',
       calender_show: false,
       cusQuickyShow: false,
       is_calender_show_right: false,
@@ -3760,34 +3761,42 @@ var date_quicky_component = normalizeComponent(
     OriginQuicky: {
       type: Array,
       default: function _default() {
+        var _this = this;
+
         return [{
           label: '过去7天',
           callback: function callback(picker) {
-            picker.$emit('cusSetQuickDate', [new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 8 * 24 * 60 * 60 * 1000, new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 24 * 60 * 60 * 1000]);
+            _this.showTitle = "过去7天";
+            picker.$emit('cusSetQuickDate', [new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 7 * 24 * 60 * 60 * 1000, new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 24 * 60 * 60 * 1000]);
           }
         }, {
           label: '过去14天',
           callback: function callback(picker) {
-            picker.$emit('cusSetQuickDate', [new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 15 * 24 * 60 * 60 * 1000, new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 24 * 60 * 60 * 1000]);
+            _this.showTitle = "过去14天";
+            picker.$emit('cusSetQuickDate', [new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 14 * 24 * 60 * 60 * 1000, new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 24 * 60 * 60 * 1000]);
           }
         }, {
           label: '过去28天',
           callback: function callback(picker) {
-            picker.$emit('cusSetQuickDate', [new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 29 * 24 * 60 * 60 * 1000, new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 24 * 60 * 60 * 1000]);
+            _this.showTitle = "过去28天";
+            picker.$emit('cusSetQuickDate', [new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 28 * 24 * 60 * 60 * 1000, new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 24 * 60 * 60 * 1000]);
           }
         }, {
           label: '过去30天',
           callback: function callback(picker) {
-            picker.$emit('cusSetQuickDate', [new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 31 * 24 * 60 * 60 * 1000, new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 24 * 60 * 60 * 1000]);
+            _this.showTitle = "过去28天";
+            picker.$emit('cusSetQuickDate', [new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 30 * 24 * 60 * 60 * 1000, new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 24 * 60 * 60 * 1000]);
           }
         }, {
           label: '今天',
           callback: function callback(picker) {
+            _this.showTitle = "今天";
             picker.$emit('cusSetQuickDate', [new Date().getTime(), new Date().getTime()]);
           }
         }, {
           label: '昨天',
           callback: function callback(picker) {
+            _this.showTitle = "昨天";
             picker.$emit('cusSetQuickDate', [new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 24 * 60 * 60 * 1000, new Date(new Date().setHours(0, 0, 0, 0)).getTime() - 24 * 60 * 60 * 1000]);
           }
         }];
@@ -4052,7 +4061,7 @@ var date_quicky_component = normalizeComponent(
       this.cusSelectedTime();
     },
     cusReloadCalender: function cusReloadCalender(y, m, is_true) {
-      var _this = this;
+      var _this2 = this;
 
       var tempObj = cusDrawCalender(y, m, this.cusDisplayCalender.length + 12);
       this.cusDisplayCalender = tempObj.cusDisplayCalender;
@@ -4064,14 +4073,14 @@ var date_quicky_component = normalizeComponent(
 
       if (is_true) {
         this.$nextTick(function () {
-          document.getElementById(_this.cusOriginScrollTable).scrollTop = 24 * 220;
+          document.getElementById(_this2.cusOriginScrollTable).scrollTop = 24 * 220;
         });
       }
 
       this.cusSelectedTime();
     },
     cusReloadComCalender: function cusReloadComCalender(y, m, is_true) {
-      var _this2 = this;
+      var _this3 = this;
 
       var tempObj = cusDrawCalender(y, m, this.cusDisplayCalender.length + 12);
       this.cusComDisplayCalender = tempObj.cusDisplayCalender;
@@ -4083,7 +4092,7 @@ var date_quicky_component = normalizeComponent(
 
       if (is_true) {
         this.$nextTick(function () {
-          document.getElementById(_this2.cusCompareScrollTable).scrollTop = 24 * 220;
+          document.getElementById(_this3.cusCompareScrollTable).scrollTop = 24 * 220;
         });
       }
 
