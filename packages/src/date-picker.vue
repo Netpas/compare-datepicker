@@ -301,6 +301,7 @@
             },
             cusClickOriginTime(type,date,notAllow){
                 if(type=='normal'&&!notAllow){
+                    this.showTitle="自定义";
                     if(this.start_cycle>=2){
                         this.start_cycle=0;
                     }
