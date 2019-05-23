@@ -51,12 +51,8 @@ function cusDisplayCalender(year,month){
             type: "normal",
             classname:true,
             cont: i + 1,
+            notAllow:false
         };
-        if(cusGetStamp(new Date())<cusGetStamp(new Date(year+'-'+month+'-'+(i+1)))){
-            obj.notAllow=true;
-        }else{
-            obj.notAllow=false;
-        }
         let tempDate = year+'-'+month+'-'+(i+1);
         tempDate=tempDate.replace(/-/g, "/");
         tempDate = new Date(tempDate);
@@ -90,3 +86,7 @@ function cusDisplayCalender(year,month){
     }
     return calender_day
 };
+
+function isDisabledTime(time) {
+    return new Date(time).getTime()>new Date().getTime();
+}

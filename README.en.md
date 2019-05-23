@@ -2,7 +2,7 @@ DatePicker
 Vue - based date picker plug-in
 
 1.Install：
-npm install compare-date-picker@ --save
+npm install compare-date-picker --save
 
 2.Import
 global
@@ -48,6 +48,15 @@ example：
     }
  ]
 ```
+
+1.New features：Optional range can be set
+
+  props | type |default |describe
+   --|--|--|--|
+   disabledDate|Array| [,new Date().getTime()]| A date greater than today is not optional
+
+   The parameter is an array with a length of 2, representing the minimum and maximum values. The minimum and minimum values and those greater than the maximum values are not optional. If the minimum value is not required, the first value is null; if the maximum value is not required, the second value is null
+
 
 1.Customize date range
 

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <compareDatePicker :originDate="date_range" @change="getDate()"></compareDatePicker>
+    <compareDatePicker :originDate="date_range" @change="getDate()" :disabledDate="disabledDate"></compareDatePicker>
   </div>
 </template>
 
@@ -10,12 +10,13 @@
       data(){
           return{
               date_range:[new Date(new Date().setHours(0, 0, 0, 0)).getTime() - (30*24 * 60 * 60 * 1000), new Date(new Date().setHours(0, 0, 0, 0)).getTime()],
+              disabledDate:[,new Date().getTime()]
           }
       },
       methods:{
           getDate(){
               console.log(this.date_range)
-          }
+          },
       }
   }
 </script>

@@ -2,7 +2,7 @@ DatePicker
 基于Vue的时间选择器插件
 
 1.安装：
-npm install compare-date-picker@ --save
+npm install compare-date-picker --save
 
 2.引入
 全局引入main.js
@@ -26,6 +26,7 @@ components:{
 <template>
   <cusDatePicker></cusDatePicker>
 </template>
+
 1.快捷键
 
 默认包含今天，昨天，过去7天，过去14天，过去28天，过去30天，可以自定义选择快捷键
@@ -45,6 +46,13 @@ components:{
     }
  ]
 ```
+1.新增功能：可设置不可选区间
+
+参数 | 类型 |默认值 |描述
+ --|--|--|--|
+ disabledDate|Array| [,new Date().getTime()]| 意味着大于今天的日期为不可选日期
+
+ 参数为长度是2的数组，表示最小值以及最大值，小与最小值的以及大于最大值的为不可选，如果不需要设置最小值，第一位为空，如果不需要设置最大值，第二位为空
 
 1.自定义时间范围
 

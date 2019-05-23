@@ -180,6 +180,12 @@
                 type:Boolean,
                 default:true
             },
+            disabledDate:{
+                type:Array,
+                default:function(){
+                    return [,new Date().getTime()]
+                }
+            },
             OriginQuicky:{
                 type:Array,
                 default:function(){
@@ -454,6 +460,24 @@
                 let tempObj=cusDrawCalender(y,m,(this.cusDisplayCalender.length+12));
                 this.cusDisplayCalender=tempObj.cusDisplayCalender;
                 this.cusCalenderTitle=tempObj.cusCalenderTitle;
+                if(this.disabledDate.length>0){
+                    for(let i=0;i<tempObj.cusDisplayCalender.length;i++){
+                        for(let j=0;j<tempObj.cusDisplayCalender[i].length;j++){
+                            if(tempObj.cusDisplayCalender[i][j].type=='normal'){
+                                if(this.disabledDate[0]&&Number(this.disabledDate[0])){
+                                    if(Number(this.disabledDate[0])>new Date(String(tempObj.cusDisplayCalender[i][j].format)).getTime()){
+                                        tempObj.cusDisplayCalender[i][j].notAllow=true;
+                                    }
+                                };
+                                if(this.disabledDate[1]&&Number(this.disabledDate[1])){
+                                    if(Number(this.disabledDate[1])<new Date(String(tempObj.cusDisplayCalender[i][j].format)).getTime()){
+                                        tempObj.cusDisplayCalender[i][j].notAllow=true;
+                                    }
+                                };
+                            }
+                        }
+                    }
+                }
                 for(let i=0;i<tempObj.cusCalenderID.length;i++){
                     this.cusOriginCalenderID[i]='origin'+tempObj.cusCalenderID[i];
                 }
@@ -462,6 +486,7 @@
                         document.getElementById(this.cusOriginScrollTable).scrollTop=24*220;
                     });
                 }
+
                 this.cusSelectedTime();
             },
             cusReloadComCalender(y,m,is_true){
@@ -477,7 +502,7 @@
                     });
                 }
                 this.cusSelectedTime();
-            }
+            },
         }
     }
 </script>
